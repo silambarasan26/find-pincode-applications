@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org">
+
+  <head>
+    <title>PinCode Finder</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  </head>
+ 
+ <body>
+ <div class="container" >
+  <div class="jumbotron" style="background-color:Tomato;">
+  <h1 class="display-4" >PinCode Finder Application</h1>
+  <p class="text-monospace">This application list the postal informations.</p>
+</div>
+
+    <table class = "table">
+      <tr>
+        <th>PostOfficeName</th>
+        <th>Pincode</th>
+        <th>DistrictsName</th>
+        <th>City</th>
+        <th>State</th>
+      </tr>
+      <tr th:each="pincode : ${pinCodeList}">
+        <td th:text="${pincode.postOfficeName}"></td>
+        <td th:text="${pincode.pincode}"></td>
+        <td th:text="${pincode.districtsName}"></td>
+        <td th:text="${pincode.city}"></td>
+        <td th:text="${pincode.state}"></td>
+      </tr>
+    </table>
+    
+    </div>
+  
+  </body>
+
+</html>
